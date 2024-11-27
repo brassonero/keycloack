@@ -28,17 +28,17 @@
 					"urlencoded": [
 						{
 							"key": "grant_type",
-							"value": "client_credentials",
+							"value": "{{grant_type}}",
 							"type": "text"
 						},
 						{
 							"key": "client_id",
-							"value": "nest-auth-client",
+							"value": "{{client_id}}",
 							"type": "text"
 						},
 						{
 							"key": "client_secret",
-							"value": "4ALNSh6UWHfYlKX7d2YRgqv0J5ZR8IGq",
+							"value": "{{client_secret}}",
 							"type": "text"
 						}
 					]
