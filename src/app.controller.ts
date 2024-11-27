@@ -1,19 +1,17 @@
-import { Controller, Get, UseGuards } from '@nestjs/common';
-import { KeycloakGuard } from './auth/guards/keycloak.guard';
+import { Controller, Get } from '@nestjs/common';
+import { AuthService } from './auth/auth.service';
 
-// Define el controlador principal
 @Controller()
 export class AppController {
-  // Endpoint público que no requiere autenticación
+  constructor(private readonly authService: AuthService) {}
+
+  @Get('token')
+  async getToken() {
+    return this.authService.getToken();
+  }
+
   @Get('public')
   getPublic() {
     return { message: 'This is a public endpoint' };
-  }
-
-  // Endpoint protegido que requiere autenticación con Keycloak
-  @UseGuards(KeycloakGuard)
-  @Get('protected')
-  getProtected() {
-    return { message: 'This is a protected endpoint' };
   }
 }

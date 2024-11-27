@@ -8,7 +8,7 @@ export class KeycloakGuard extends AuthGuard('keycloak') {
   // Inicializa un logger específico para este guard
   private readonly logger = new Logger(KeycloakGuard.name);
 
-  // Método que verifica si la petición puede activar el endpoint
+  // Metodo que verifica si la petición puede activar el endpoint
   async canActivate(context: ExecutionContext): Promise<boolean> {
     // Obtiene el objeto request del contexto HTTP
     const request = context.switchToHttp().getRequest();
