@@ -7,6 +7,47 @@
 	},
 	"item": [
 		{
+			"name": "[local] nest-public",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{IP}}:3000/public",
+					"host": [
+						"{{IP}}"
+					],
+					"port": "3000",
+					"path": [
+						"public"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[local] nest-protected",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"url": {
+					"raw": "{{IP}}:3000/protected",
+					"host": [
+						"{{IP}}"
+					],
+					"port": "3000",
+					"path": [
+						"protected"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "[local] keycloak-docker",
 			"event": [
 				{
@@ -89,47 +130,6 @@
 					"port": "3000",
 					"path": [
 						"token"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "[local] nest-public",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{IP}}:3000/public",
-					"host": [
-						"{{IP}}"
-					],
-					"port": "3000",
-					"path": [
-						"public"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "[local] nest-protected",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{accessToken}}"
-					}
-				],
-				"url": {
-					"raw": "{{IP}}:3000/protected",
-					"host": [
-						"{{IP}}"
-					],
-					"port": "3000",
-					"path": [
-						"protected"
 					]
 				}
 			},
